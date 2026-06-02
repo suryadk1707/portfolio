@@ -301,7 +301,7 @@
             <div class="hero-avail">
                 <span class="hero-avail-dot"></span>open to new roles
             </div>
-            <h1 class="hero-name">
+            <h1 class="hero-name" id="text">
               Suryanarayana
               <span class="hero-name-blue">Dharanikota</span>
           </h1>
@@ -897,8 +897,53 @@
     <p>Suryanarayana Dharanikota · Senior Full Stack Engineer · Kakinada, AP, India</p>
     <p>Built by hand, not by template · <em>suryadk</em> · 2026</p>
 </footer>
-
 <script>
+const finalText = "Suryanarayana Dharanikota";
+const chars =
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()<>?/[]{}";
+
+const duration = 1000;
+const element = document.getElementById("text");
+
+const startTime = performance.now();
+
+const revealTimes = finalText.split("").map(char => {
+    if (char === " ") return 0;
+    return Math.random() * duration;
+});
+
+const current = finalText.split("").map(char => {
+    if (char === " ") return " ";
+    return chars[Math.floor(Math.random() * chars.length)];
+});
+
+function animate(now) {
+    const elapsed = now - startTime;
+
+    for (let i = 0; i < finalText.length; i++) {
+
+        if (finalText[i] === " ") continue;
+
+        if (elapsed >= revealTimes[i]) {
+            current[i] = finalText[i];
+        } else {
+            if (Math.random() < 0.5) {
+                current[i] =
+                    chars[Math.floor(Math.random() * chars.length)];
+            }
+        }
+    }
+
+    element.textContent = current.join("");
+
+    if (elapsed < duration) {
+        requestAnimationFrame(animate);
+    } else {
+        element.textContent = finalText;
+    }
+}
+
+requestAnimationFrame(animate);
     const ham=document.getElementById('ham');
     const mob=document.getElementById('mob');
     ham.addEventListener('click',()=>{
