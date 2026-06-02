@@ -52,14 +52,14 @@
         #hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
         .hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,var(--border) 1px,transparent 1px);background-size:32px 32px;opacity:0.5;pointer-events:none}
         .hero-fade{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(79,158,255,0.05) 0%,transparent 70%);pointer-events:none}
-        .hero-content{position:relative;z-index:1;padding:3rem 0}
+        .hero-content{position:relative;z-index:1;padding:3rem 0;max-width:720px;}
         .hero-avail{display:inline-flex;align-items:center;gap:0.45rem;background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.2);border-radius:100px;padding:0.28rem 0.8rem;font-family:var(--ff-mono);font-size:0.68rem;color:#4eca82;margin-bottom:1.6rem;letter-spacing:0.04em}
         .hero-avail-dot{width:6px;height:6px;border-radius:50%;background:#27ae60;animation:blink 2.2s infinite}
         @keyframes blink{0%,100%{opacity:1}55%{opacity:0.35}}
-        .hero-name{font-family:var(--ff-display);font-size:clamp(2rem,6.5vw,3.8rem);font-weight:800;letter-spacing:-0.04em;line-height:0.95;color:var(--text);margin-bottom:0.35rem}
+        .hero-name{font-family:var(--ff-display);font-size:clamp(2rem,7vw,5rem);font-weight:800;letter-spacing:-0.05em;line-height:0.95;color:var(--text);margin-bottom:0.35rem}
         .hero-name-blue{color:var(--accent)}
         .hero-role{font-family:var(--ff-display);font-size:clamp(0.9rem,2vw,1.2rem);font-weight:600;color:var(--text3);margin-bottom:1.1rem;letter-spacing:-0.01em}
-        .hero-bio{font-size:0.95rem;color:var(--text2);max-width:500px;line-height:1.85;margin-bottom:2rem}
+        .hero-bio{font-size:1rem;color:var(--text2);max-width:720px;line-height:1.9;margin-bottom:2rem;}
         .hero-stats{display:grid;grid-template-columns:repeat(4,auto);gap:0;margin-bottom:2.25rem;max-width:480px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
         .hstat{padding:0.9rem 1rem;border-right:1px solid var(--border);display:flex;flex-direction:column}
         .hstat:last-child{border-right:none}
